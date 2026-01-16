@@ -1,0 +1,7 @@
+[LOGIN]
+email = 'mateuswalkasther@gmail.com'
+senha = 'Iq#2015'
+
+[AJUSTES]
+valor_inicial = 2
+multiplicador = 2.2

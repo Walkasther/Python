@@ -1,0 +1,246 @@
+/* ... (estilos anteriores) ... */
+@import url('https://fonts.googleapis.com/css2?family=Fredoka+One&family=Nunito:wght@400;700;800&display=swap');
+
+:root {
+    --cor-fundo: #51B9FF;
+    --cor-primaria: #F866A3;
+    --cor-secundaria: #FCC02C;
+    --texto-branco: #FFFFFF;
+    --texto-amarelo: #FFD95A;
+    --sombra-escura: rgba(0, 0, 0, 0.2);
+    --fonte-titulo: 'Fredoka One', cursive;
+    --fonte-corpo: 'Nunito', sans-serif;
+}
+
+body {
+    background-color: var(--cor-fundo);
+    font-family: var(--fonte-corpo);
+    color: var(--texto-branco);
+    margin: 0;
+    padding: 20px;
+    height: 100vh;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.main-container {
+    width: 100%;
+    max-width: 800px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+
+.app-header {
+    padding: 20px 0;
+    min-height: 150px; /* Garante espaço para o logo */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.logo {
+    max-width: 180px;
+    height: auto;
+}
+
+/* Sistema de Telas */
+.screen {
+    display: none; /* Esconde todas as telas por padrão */
+    flex-direction: column;
+    flex-grow: 1;
+    width: 100%;
+}
+
+.screen.active {
+    display: flex; /* Mostra apenas a tela ativa */
+}
+
+
+/* --- Estilos da Tela de Produtos --- */
+.product-selection {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    justify-content: center;
+}
+
+.product-card {
+    background-size: cover;
+    background-position: center;
+    border-radius: 20px;
+    padding: 20px;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    align-items: flex-end;
+    min-height: 150px;
+    box-shadow: 0 5px 15px var(--sombra-escura);
+    position: relative;
+    overflow: hidden;
+}
+
+.product-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(to top, rgba(0,0,0,0.8), transparent 60%);
+}
+
+.product-card:hover {
+    transform: scale(1.03);
+    box-shadow: 0 10px 25px var(--sombra-escura);
+}
+
+/* Imagens de fundo para os cards */
+#polaroid { background-image: url('/assets/img/bg-polaroid.jpg'); }
+#comum { background-image: url('/assets/img/bg-comum.jpg'); }
+#tres-por-quatro { background-image: url('/assets/img/bg-3x4.jpg'); }
+
+
+.product-info {
+    z-index: 1;
+    text-align: left;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.7);
+}
+
+.product-info h2 {
+    font-family: var(--fonte-titulo);
+    color: var(--texto-amarelo);
+    font-size: 2.2rem;
+    margin: 0 0 5px 0;
+}
+
+.product-info p {
+    font-size: 1.2rem;
+    font-weight: 700;
+    margin: 0;
+    color: var(--texto-branco);
+}
+
+/* --- Estilos da Tela de Quantidade --- */
+.quantity-selection-container {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 25px;
+}
+
+.title {
+    font-family: var(--fonte-titulo);
+    font-size: 3rem;
+    margin: 0;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+}
+
+.subtitle {
+    font-size: 1.3rem;
+    font-weight: 700;
+    margin: 0;
+    opacity: 0.9;
+}
+
+.quantity-options {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    width: 100%;
+    max-width: 600px;
+}
+
+.quantity-option {
+    background-color: var(--cor-secundaria);
+    border: none;
+    border-radius: 15px;
+    padding: 20px;
+    font-family: var(--fonte-corpo);
+    color: #333;
+    cursor: pointer;
+    transition: transform 0.2s, box-shadow 0.2s;
+    border: 4px solid transparent;
+}
+
+.quantity-option.active {
+    border-color: var(--texto-branco);
+    transform: scale(1.05);
+}
+
+.quantity-option span {
+    font-size: 1.2rem;
+    display: block;
+}
+.quantity-option strong {
+    font-size: 1.5rem;
+    font-weight: 800;
+    display: block;
+}
+
+.quantity-stepper {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    font-size: 2.5rem;
+    font-weight: 800;
+}
+
+.quantity-stepper button {
+    font-family: var(--fonte-titulo);
+    background-color: var(--texto-branco);
+    color: var(--cor-fundo);
+    border: none;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    font-size: 2.5rem;
+    cursor: pointer;
+}
+
+.total-price {
+    font-family: var(--fonte-titulo);
+    font-size: 2.5rem;
+}
+
+
+/* --- Estilos dos Rodapés e Botões --- */
+.app-footer, .app-footer-buttons {
+    padding: 20px 0;
+    min-height: 100px;
+}
+
+.app-footer-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.btn-primary, .btn-secondary {
+    border: none;
+    border-radius: 15px;
+    padding: 15px 40px;
+    font-family: var(--fonte-titulo);
+    font-size: 1.5rem;
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+.btn-primary:hover, .btn-secondary:hover {
+    transform: scale(1.05);
+}
+
+.btn-primary {
+    background-color: var(--cor-primaria);
+    color: var(--texto-branco);
+}
+
+.btn-secondary {
+    background-color: var(--cor-primaria);
+    color: var(--texto-branco);
+}

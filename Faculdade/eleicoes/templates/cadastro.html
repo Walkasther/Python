@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <title>Urna Eletrônica - Registro de Candidatos</title>
+    <link rel="stylesheet" href="/static/css/styles.css">
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/filtrar_cargos.js') }}"></script>
+</head>
+<body>
+    <div class="container">
+        <h1>Urna Eletrônica</h1>
+        <h2 id="texto_escolha"></h2>
+        <h3>Registrar Novo Candidato</h3>
+        <form action="/registrar_candidato" method="POST" onsubmit="return validarFormulario(event)">
+            <label for="tipo_candidato">Tipo de Candidato:</label>
+            <select id="tipo_candidato" name="tipo_candidato" onchange="atualizarCampo()">
+                <option value="presidente">Presidente</option>
+                <option value="governador">Governador</option>
+                <option value="senador">Senador</option>
+                <option value="deputado_federal">Deputado Federal</option>
+                <option value="deputado_estadual">Deputado Estadual</option>
+                <option value="prefeito">Prefeito</option>
+                <option value="vereador">Vereador</option>
+            </select>
+            <label for="nome">Nome do Candidato:</label>
+            <input type="text" id="nome" name="nome" required>
+            <label for="numero">Numero do Candidato:</label>
+            <input type="number" min="10" max="99" oninput="validarTamanho(this)" id="numero" name="numero" required>
+            <button type="submit">Registrar</button>
+        </form>
+
+        <a href="/votar">Ir para Votação</a> | <a href="/resultados">Ver Resultados</a>
+    </div>
+</body>
+</html>

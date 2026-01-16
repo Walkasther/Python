@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Configuração Inicial do Quiosque - PhotoTime</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Fredoka+One&family=Nunito:wght@400;700&display=swap');
+
+        :root {
+            --cor-fundo: #51B9FF;
+            --cor-primaria: #F866A3;
+            --cor-texto: #FFFFFF;
+            --fonte-titulo: 'Fredoka One', cursive;
+            --fonte-corpo: 'Nunito', sans-serif;
+        }
+
+        body {
+            background-color: var(--cor-fundo);
+            font-family: var(--fonte-corpo);
+            color: var(--cor-texto);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            text-align: center;
+        }
+
+        .container {
+            background-color: rgba(255, 255, 255, 0.1);
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+            max-width: 500px;
+        }
+
+        h1 {
+            font-family: var(--fonte-titulo);
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+
+        p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+        }
+
+        .input-field {
+            width: 100%;
+            padding: 15px;
+            border-radius: 10px;
+            border: 2px solid var(--cor-texto);
+            background-color: transparent;
+            color: var(--cor-texto);
+            font-size: 1.1rem;
+            margin-bottom: 30px;
+            box-sizing: border-box;
+        }
+
+        .input-field::placeholder {
+            color: rgba(255, 255, 255, 0.7);
+        }
+
+        .btn-registrar {
+            background-color: var(--cor-primaria);
+            color: var(--cor-texto);
+            border: none;
+            border-radius: 15px;
+            padding: 15px 40px;
+            font-family: var(--fonte-titulo);
+            font-size: 1.5rem;
+            cursor: pointer;
+            transition: transform 0.2s;
+        }
+
+        .btn-registrar:hover {
+            transform: scale(1.05);
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Bem-vindo ao PhotoTime!</h1>
+        <p>Este parece ser um novo quiosque. Por favor, dê um nome a ele para facilitar a identificação no painel de controle.</p>
+
+        <input type="text" id="nomeQuiosque" class="input-field" placeholder="Ex: Shopping Morumbi - Piso 1">
+
+        <button id="registrarBtn" class="btn-registrar">Registrar Quiosque</button>
+    </div>
+
+    <script>
+        // Lógica simples para o frontend (a ser movida para um arquivo .js)
+        const registrarBtn = document.getElementById('registrarBtn');
+        const nomeQuiosqueInput = document.getElementById('nomeQuiosque');
+
+        // Em uma aplicação real, verificaríamos se já existe um ID salvo localmente
+        // const identificadorLocal = localStorage.getItem('phototime_quiosque_id');
+        // if (identificadorLocal) {
+        //     window.location.href = 'index.html'; // Redireciona para a tela principal
+        // }
+
+        registrarBtn.addEventListener('click', () => {
+            const nomeAmigavel = nomeQuiosqueInput.value;
+            if (!nomeAmigavel) {
+                alert('Por favor, digite um nome para o quiosque.');
+                return;
+            }
+
+            // A URL da API deve ser configurável
+            const apiUrl = 'http://127.0.0.1:8000/api/quiosques/registrar';
+
+            // Usando URLSearchParams para enviar como 'form data' que o FastAPI espera
+            const body = new URLSearchParams();
+            body.append('nome_amigavel', nomeAmigavel);
+
+            fetch(apiUrl, {
+                method: 'POST',
+                body: body,
+                headers: {
+                    'Content-Type': 'application/x-www-form-urlencoded'
+                }
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.identificador_unico) {
+                    alert(`Quiosque registrado com sucesso! ID: ${data.identificador_unico}`);
+                    // Salvar o ID localmente para uso futuro
+                    // Em um quiosque real, isso seria salvo em um arquivo de configuração
+                    // para persistir após reinicializações.
+                    localStorage.setItem('phototime_quiosque_id', data.identificador_unico);
+
+                    // Redirecionar para a tela principal do quiosque
+                    window.location.href = 'index.html';
+                } else {
+                    alert('Ocorreu um erro ao registrar o quiosque.');
+                }
+            })
+            .catch(error => {
+                console.error('Erro na requisição:', error);
+                alert('Não foi possível conectar à API. Verifique se o backend está rodando.');
+            });
+        });
+    </script>
+
+</body>
+</html>
+

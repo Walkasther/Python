@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PhotoTime</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>PhotoTime</h1>
+    </header>
+    <main>
+        <section id="sessao">
+            <h2>Criar Sessão</h2>
+            <form id="form-sessao">
+                <label for="quiosque-id">Quiosque ID:</label>
+                <input type="number" id="quiosque-id" name="quiosque-id">
+                <button type="submit">Criar Sessão</button>
+            </form>
+            <p id="codigo-sessao"></p>
+        </section>
+        <section id="upload">
+            <h2>Upload de Fotos</h2>
+            <form id="form-upload">
+                <input type="file" id="foto" name="foto">
+                <button type="submit">Upload</button>
+            </form>
+        </section>
+    </main>
+    <script src="script.js"></script>
+</body>
+</html>

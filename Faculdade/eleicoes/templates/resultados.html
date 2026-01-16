@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <title>Urna Eletrônica - Resultados</title>
+    <link rel="stylesheet" href="/static/css/styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Resultados da Eleição</h1>
+        <table>
+            <tr>
+                <th>Candidato</th>
+                <th>Votos</th>
+            </tr>
+            {% for resultado in resultados %}
+                <tr>
+                    <td>{{ resultado[0] }}</td>
+                    <td>{{ resultado[1] }}</td>
+                </tr>
+            {% endfor %}
+        </table>
+        <a href="/">Voltar</a> | <a href="/votar">Ir para Votação</a>
+    </div>
+</body>
+</html>

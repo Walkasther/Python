@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ultrasonic QR Code</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Ultrasonic QR Code</h1>
+        <div class="encoder">
+            <h2>Encode Message</h2>
+            <input type="text" id="messageInput" placeholder="Enter binary message" maxlength="20">
+            <button id="encodeButton">Encode & Play</button>
+        </div>
+
+        <div class="decoder">
+            <h2>Decode Message</h2>
+            <button id="recordButton">Record</button>
+            <p id="decodedMessage">Decoded message will appear here</p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

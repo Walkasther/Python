@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <title>Urna Eletrônica - Votação</title>
+    <link rel="stylesheet" href="/static/css/styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Votação</h1>
+        {% if mensagem %}
+            <p>{{ mensagem }}</p>
+        {% endif %}
+        <form action="/votar" method="POST">
+            <label for="titulo_eleitor">Título de Eleitor:</label>
+            <input type="text" id="titulo_eleitor" name="titulo_eleitor" required><br><br>
+            <label for="id_candidato">Escolha o Candidato:</label>
+            <select id="id_candidato" name="id_candidato">
+                {% for candidato in candidatos %}
+                    <option value="{{ candidato[0] }}">{{ candidato[1] }}</option>
+                {% endfor %}
+            </select><br><br>
+            <label for="numero_prefeito">Numero do Candidato a Prefeito:</label>
+            <input type="number" id="numero_prefeito" name="numero_prefeito" required>
+            <button type="submit">Votar</button>
+        </form>
+        <br>
+        <a href="/">Voltar</a> | <a href="/resultados">Ver Resultados</a>
+    </div>
+</body>
+</html>
