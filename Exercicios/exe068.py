@@ -12,17 +12,18 @@ while True:
     print('-' * 50)
     while escolha not in [1,2]:
         escolha = int(input('[1]IMPAR OU [2]PAR: '))
+        print('-'*30)
     jogador = int(input('Escolha um número: '))
-    print(f'Escolhido pelo computador: {computador}')
+    print(f'\033[33mEscolhido pelo computador: {computador}\033[m')
     resultado = jogador + computador
     if resultado % 2 == 0:
-        print('Deu par!')
-        print('Você ' + ('ganhou!' if escolha == 2 else 'perdeu.'))
+        print('\033[34mDeu par!\033[m')
+        print('Você ' + ('\033[92mganhou!\033[m' if escolha == 2 else '\033[91mperdeu.\033[m'))
         vencedor = 'computador' if escolha == 1 else 'jogador'
         escolha = 0
     else:
-        print('Deu impar!')
-        print('Você ' + ('ganhou!' if escolha == 1 else 'perdeu.'))
+        print('\033[35mDeu impar!\033[m')
+        print('Você ' + ('\033[92mganhou!\033[m' if escolha == 1 else '\033[91mperdeu.\033[m'))
         vencedor = 'computador' if escolha == 2 else 'jogador'
         escolha = 0
     if vencedor == 'computador':
