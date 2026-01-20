@@ -5,25 +5,50 @@
 print('=' * 50)
 print(f'{'BANCO DIGITAL':-^50}')
 print('=' * 50)
-#nota_50 = nota_20 = nota_10 = nota_1 = 0
 valor = int(input('Qual valor você quer sacar? R$'))
 valor2 = valor
-nota_50 = valor2 // 50
-valor2 -= nota_50 * 50
-nota_20 = valor2 // 20
-valor2 -= nota_20 * 20
-nota_10 = valor2 // 10
-valor2 -= nota_10 * 10
-nota_1 = valor2 // 1
-print(f'Total de:')
-if nota_50 > 0:
-      print(f'\033[31m{nota_50} Cédulas de R$50')
-if nota_20 > 0:
-      print(f'\033[32m{nota_20} Cédulas de R$20')
-if nota_10 > 0:
-      print(f'\033[33m{nota_10} Cédulas de R$10')
-if nota_1 > 0:
-      print(f'\033[34m{nota_1} Cédulas de R$1')
+#######################################################################
+#Solução 1
+
+# nota_50 = valor2 // 50
+# valor2 -= nota_50 * 50
+# nota_20 = valor2 // 20
+# valor2 -= nota_20 * 20
+# nota_10 = valor2 // 10
+# valor2 -= nota_10 * 10
+# nota_1 = valor2 // 1
+# print(f'Total de:')
+# if nota_50 > 0:
+#       print(f'\033[31m{nota_50} Cédulas de R$50')
+# if nota_20 > 0:
+#       print(f'\033[32m{nota_20} Cédulas de R$20')
+# if nota_10 > 0:
+#       print(f'\033[33m{nota_10} Cédulas de R$10')
+# if nota_1 > 0:
+#       print(f'\033[34m{nota_1} Cédulas de R$1')
+
+######################################################################
+#Solução 2
+tot_cedula = 0
+cedula = 50
+while True:
+    if valor2 >= cedula:
+        valor2 -= cedula
+        tot_cedula += 1
+    else:
+        if tot_cedula > 0:
+            print(f'Total de {tot_cedula} cédulas de R${cedula}')
+        if valor2 == 0:
+            break
+        if cedula == 50:
+            cedula = 20
+        elif cedula == 20:
+            cedula = 10
+        elif cedula == 10:
+            cedula = 1
+        tot_cedula = 0
+
+
 
 print('\033[97m=' * 50)
 print('\033[35mVolte sempre ao banco digital! \nTenha um bom dia!')

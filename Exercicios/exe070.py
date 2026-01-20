@@ -4,22 +4,19 @@
 #B) Quantos produtos custam mais de R$ 1000.
 #C) Qual é o nome do produto mais barato.
 
-total = 0
-mais_1000 = 0
-preco_mais_barato = 0
+total = mais_1000 = preco_mais_barato = 0
 c = 1
 nome_mais_barato = str
 while True:
+    print('=' * 30)
     nome = input(f'Informe o nome do {c}° produto: ')
     preco = float(input(f'Informe o preço do {c}° produto: R$'))
+    print('=' * 30)
     continuar = int(input('Quer continuar? [1]SIM [2]NÃO: '))
     total += preco
     if preco > 1000:
         mais_1000 += 1
-    if c == 1:
-        nome_mais_barato = nome
-        preco_mais_barato = preco
-    if preco_mais_barato > preco:
+    if c == 1 or preco_mais_barato > preco:
         nome_mais_barato = nome
         preco_mais_barato = preco
     if continuar == 1:

@@ -3,9 +3,7 @@
 
 from random import randint
 c = 0
-vencedor = 'jogador'
 escolha = 0
-jogador = 0
 print(f'{'Jogo do par ou impar':-^50}')
 while True:
     computador = randint(0, 10)

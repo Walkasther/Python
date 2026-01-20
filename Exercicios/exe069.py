@@ -6,18 +6,18 @@
 
 print(f'{'Cadastrador de pessoas':-^50}')
 c = 1
-mais_18 = 0
-homem = 0
-mulher_menor = 0
+mais_18 = homem = mulher_menor = 0
 while True:
     idade = int(input(f'Digite a idade da {c}° pessoa: '))
-    sexo = input(f'Informe o sexo da {c} pessoa. [M]Masculino [F]Feminino: ')
+    sexo = ''
+    while sexo not in ['M','F']:
+        sexo = input(f'Informe o sexo da {c} pessoa. [M]Masculino [F]Feminino: ').strip().upper()[0]
     continuar = int(input('Quer continuar? [0]SIM [1]NÃO: '))
     if idade > 18:
         mais_18 += 1
-    if sexo in ['m','M']:
+    if sexo == 'M':
         homem += 1
-    if sexo in ['f','F'] and idade < 20:
+    if sexo == 'F' and idade < 20:
         mulher_menor += 1
     if continuar == 0:
         c += 1
