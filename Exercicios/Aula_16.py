@@ -11,6 +11,9 @@ print('\033[31m')
 # for comida in lanche:
 #     print(f'Eu vou comer {comida}')
 # print('Comi pra caramba!')
-del(lanche)#Deleta a tupla inteira.
+print(sorted(lanche))#Ordena a tupla em ordem alfabética.
+print(lanche.index('suco'))#Mostra o indice onde o suco aparece pela primeira vez.
+print(lanche.index('suco',3))#Mostra o indice onde o suco aparece pela primeira vez a partir do indice escolhido. Nesse caso começando a partir da posição 3
 for posicao, comida in enumerate(lanche):
     print(f'Eu vou comer {comida} na posição {posicao}')
+del(lanche)#Deleta a tupla inteira.
