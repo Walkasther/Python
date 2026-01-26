@@ -5,5 +5,8 @@ tupla_preço = 'Arroz',13.99, 'Feijão', 6.99, 'Açai', 5, 'Poupa', 2.5, 'Carne 
 
 print(f'{'-'*50}\n{'Supermercado Guanabara':^50}\n{'-'* 50}')
 for c,produto in enumerate(tupla_preço):
-    if c % 2 == 0: print(f'{produto:.<40}',end='')
-    else: print(f'R$  {produto:.2f}')
+    if c % 2 == 0:
+        print(f'{produto:.<40}',end='')
+    else:
+        print(f'R$  {produto:.2f}')
+print('-'*50)
