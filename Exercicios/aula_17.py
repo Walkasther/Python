@@ -1,0 +1,20 @@
+lanche = ['Pão', 'Suco', 'Pizza', 'Salgado']
+print(lanche)
+lanche[3] = 'Pudim'
+print(lanche)
+lanche.append('Biscoito')
+print(lanche)
+lanche.sort()
+print(lanche)
+lanche.sort(reverse=True)
+print(lanche)
+print(f'Essa lista tem {len(lanche)} Elementos.')
+lanche.insert(2, 'Cachorro quente')
+print(lanche)
+lanche.pop()
+print(lanche)
+lanche.pop(2)
+print(lanche)
+print(f'Essa lista tem {len(lanche)} Elementos.')
+for i in lanche:
+    print(lanche[i])
