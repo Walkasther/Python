@@ -11,6 +11,7 @@
 
 algo = input('Digite algo: ')
 
+print(type(algo))
 print('É alfa-numerico? ', algo.isalnum())
 print('É uma letra? ', algo.isalpha())
 print('É um número? ', algo.isnumeric())

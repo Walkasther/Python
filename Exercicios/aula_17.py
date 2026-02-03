@@ -1,3 +1,14 @@
+a = [1,2,3,4,5,6,7,8]
+b = a.copy()
+b.append(15)
+b[5] = 10
+#a.clear()
+print(f'A = {a}')
+print(f'B = {b}')
+
+
+
+
 lanche = ['Pão', 'Suco', 'Pizza', 'Salgado']
 print(lanche)
 lanche[3] = 'Pudim'
@@ -17,4 +28,4 @@ lanche.pop(2)
 print(lanche)
 print(f'Essa lista tem {len(lanche)} Elementos.')
 for i in lanche:
-    print(lanche[i])
+    print(i)
