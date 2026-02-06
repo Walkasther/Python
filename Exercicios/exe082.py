@@ -2,9 +2,7 @@
 #conter apenas os valores pares e os valores impares digitados, respectivamente.
 #Ao final, mostre o conteúdo das três listas geradas.
 
-lista_valores = []
-lista_pares = []
-lista_impares = []
+lista_valores, lista_pares, lista_impares = [], [], []
 while True:
     lista_valores.append(int(input('Digite um número: ')))
     cont = int(input('Quer continuar? [1]SIM [2]NÃO: '))

@@ -5,7 +5,6 @@
 
 expressao = input('Digite a expressão: ').strip()
 expressao = ''.join(expressao.split())
-print(expressao)
 lista_expressao = []
 correto = True
 for i in expressao:

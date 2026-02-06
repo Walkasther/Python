@@ -1,8 +1,7 @@
 #Faça um programa que leia 5 valores numéricos e guarde numa lista.
 #No final, mostre qual foi o maior e o menor valor digitado e as suas respectivas posições na lista.
 lista_valores = []
-maior = 0
-menor = 0
+maior = menor = 0
 posicao_Maior = list()
 posicao_Menor = []
 for i in range (0,5):

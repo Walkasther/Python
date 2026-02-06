@@ -9,23 +9,24 @@ while True:
         lista_valores.pop()
         break
     if lista_valores[-1] in lista_valores[:-1]:
+         print('Valor Duplicado, não vou adicionar...')
          lista_valores.pop()
 lista_valores.sort()
 print('\033[32m-' * 40)
-print('Os valores digitados foram:', end='[')
-for c in lista_valores:
-    print(c, end= ']\n' if c == lista_valores[-1] else ',')
+print(f'Os valores digitados foram: {lista_valores}')
 
+#Solução 2
 lista_valores = []
 while True:
     valor = (int(input('Digite um número: ')))
     continuar = input('Quer continuar? [S/N]: ')
     if valor  not in lista_valores:
         lista_valores.append(valor)
+        print('Número adicionado com sucesso...')
+    else:
+        print('Valor Duplicado, não vou adicionar...')
     if continuar in 'nN':
         break
 lista_valores.sort()
 print('\033[31m-' * 40)
-print('OS VALORES DIGITADOS FORAM:', end='[')
-for c in lista_valores:
-    print(c, end=']' if c == lista_valores[-1] else ', ')
+print(f'OS VALORES DIGITADOS FORAM: {lista_valores}')
