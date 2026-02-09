@@ -1,5 +1,5 @@
 #Faça um programa que leia um número inteiro qualquer e mostre na tela a sua tabuada
-from cores import verde_claro
+from Curso_Em_Video.Aulas.cores import verde_claro
 
 n = int(input('{}Digite um número inteiro: '.format(verde_claro)))
 print('\033[0;34m=' * 5 + ' Tabuada do {} '.format(n) + '=' * 5)

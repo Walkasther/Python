@@ -1,5 +1,5 @@
 # Faça um programa que leia algo pelo teclado e mostre na tela o seu tipo primitivo e todas as informações sobre ele.
-from cores import azul
+from Curso_Em_Video.Aulas.cores import azul
 
 algo = input('Digite algo: ')
 

@@ -1,5 +1,5 @@
 # Escreva um programa que leia um valor em metros e o exiba em centímetros e milímetros
-from cores import magenta, reset
+from Curso_Em_Video.Aulas.cores import magenta, reset
 
 metros = float(input('{}Quantos metros quer converter?{} '.format(magenta, reset)))
 centimetros = metros * 100
