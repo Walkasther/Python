@@ -12,7 +12,7 @@ while True:
     continuar = input('Quer continuar? [S]SIM [N]NÃO: ').strip().upper()[0]
     if continuar == 'N':
         break
-print(f'Foram cadastradas {len(pessoas)} pessoas.')
+print(f'\033[32mForam cadastradas {len(pessoas)} pessoas.')
 
 maior = menor = 0
 for i,c in enumerate(pessoas):
@@ -24,11 +24,11 @@ for i,c in enumerate(pessoas):
             maior = c[1]
         elif c[1] <= menor:
             menor = c[1]
-print(f'o maior peso cadastrado foi de {maior} KG de ')
+print(f'\033[31mo maior peso cadastrado foi de {maior}Kg. de ', end='')
 for c in pessoas:
     if c[1] == maior:
-        print(c[0], end=', ')
-print(f'\nO menor peso cadastrado foi de {menor}Kg de ')
+        print(f'[{c[0]}', end='] ')
+print(f'\n\033[33mO menor peso cadastrado foi de {menor}Kg. de ', end='')
 for c in pessoas:
     if c[1] == menor:
-        print(c[0], end=', ')
+        print(f'[{c[0]}', end='] ')
