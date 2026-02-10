@@ -4,3 +4,16 @@
 #Elevado - Maior que 100 Até 140 mg/dl
 #Diabetes - Maior que 140 mg/dl
 
+glicose = float(input('Digite a medida da glicose: '))
+
+if glicose < 0:
+    print('Valor inválido!')
+else:
+    classificacao = 'Normal'
+
+    if 100 < glicose <= 140:
+        classificacao = 'Elevado'
+    elif glicose > 140:
+        classificacao = 'Diabetes'
+
+    print(f'Classificação: {classificacao}')

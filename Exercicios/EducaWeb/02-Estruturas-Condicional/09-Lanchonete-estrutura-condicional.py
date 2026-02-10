@@ -8,3 +8,22 @@
 # 4   |   R$ 8.90
 # 5   |   R$ 7.32
 
+codigo_produto = int(input('Código do produto comprado: '))
+quantidade = int(input('Quantidade comprada: '))
+
+if codigo_produto == 1:
+    preco_final = quantidade * 5
+
+elif codigo_produto == 2:
+    preco_final = quantidade * 3.50
+
+elif codigo_produto == 3:
+    preco_final = quantidade * 4.80
+
+elif codigo_produto == 4:
+    preco_final = quantidade * 8.90
+
+elif codigo_produto == 5:
+    preco_final = quantidade * 7.32
+
+print(f'Valor a pagar: R$ {preco_final:.2f}')
