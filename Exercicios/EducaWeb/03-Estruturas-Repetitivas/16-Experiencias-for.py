@@ -30,9 +30,12 @@ for _ in range(n):
     else:
         print('Tipo invalido')
 
-percentual_coelhos = coelhos_total / cobaias_total * 100
-percentual_ratos = ratos_total / cobaias_total * 100
-percentual_sapos = sapos_total / cobaias_total * 100
+if cobaias_total > 0:
+    percentual_coelhos = coelhos_total / cobaias_total * 100
+    percentual_ratos = ratos_total / cobaias_total * 100
+    percentual_sapos = sapos_total / cobaias_total * 100
+else:
+    percentual_coelhos = percentual_ratos = percentual_sapos = 0
 
 print('RELATORIO FINAL')
 print(f'Total: {cobaias_total} cobaias')
