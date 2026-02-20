@@ -32,7 +32,6 @@ for i in range(n):
     else:
         lucro_alto += 1
 
-
 total_compra = sum(precos_compra)
 total_venda = sum(precos_venda)
 lucro_total = total_venda - total_compra
