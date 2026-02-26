@@ -2,18 +2,22 @@
 # Em seguida, mostrar a diagonal principal e a quantidade de valores negativos da matriz.
 
 n = int(input('Qual a ordem da matriz? '))
-quantidade_negativos = 0
 
-matriz = [[int(input(f'Elemento [{i},{j}]: ')) for j in range(n)] for i in range(n)]
+if 0 <= n <= 10:
+    quantidade_negativos = 0
+    matriz = [[int(input(f'Elemento [{i},{j}]: ')) for j in range(n)] for i in range(n)]
 
-for i in range(n):
-    for j in range(n):
-        if matriz[i][j] < 0:
-            quantidade_negativos += 1
+    for i in range(n):
+        for j in range(n):
+            if matriz[i][j] < 0:
+                quantidade_negativos += 1
 
-print('DIAGONAL PRINCIPAL:')
-for i in range(n):
-    print(f'{matriz[i][i]}', end=' ')
-print()
+    print('DIAGONAL PRINCIPAL:')
+    for i in range(n):
+        print(f'{matriz[i][i]}', end=' ')
+    print()
 
-print(f'QUANTIDADE DE NEGATIVOS = {quantidade_negativos}')
+    print(f'QUANTIDADE DE NEGATIVOS = {quantidade_negativos}')
+
+else:
+    print('Valores invalidos')

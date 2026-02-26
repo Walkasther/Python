@@ -4,18 +4,20 @@
 m = int(input('Qual a quantidade de linhas da matriz? '))
 n = int(input('Qual a quantidade de colunas da matriz? '))
 
-matriz = []
+if (0 < m <= 10) and (0 < n <= 10):
+    matriz = []
 
-for i in range(m):
-    linha = []
+    for i in range(m):
+        linha = []
+        for j in range(n):
+            linha.append(int(input(f'Elemento [{i},{j}]: ')))
+        matriz.append(linha)
 
-    for j in range(n):
-        linha.append(int(input(f'Elemento [{i},{j}]: ')))
+    print('VALORES NEGATIVOS:')
+    for linha in matriz:
+        for numero in linha:
+            if numero < 0:
+                print(numero)
 
-    matriz.append(linha)
-
-print('VALORES NEGATIVOS:')
-for numeros in matriz:
-    for numero in numeros:
-        if numero < 0:
-            print(numero)
+else:
+    print('Valores invalidos')

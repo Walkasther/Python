@@ -5,20 +5,23 @@
 m = int(input('Qual a quantidade de linhas da matriz? '))
 n = int(input('Qual a quantidade de colunas da matriz? '))
 
-matriz = []
+if (0 < m <= 10) and (0 < n <= 10):
+    matriz = []
 
-for i in range(m):
-    matriz.append([])
-    print(f'Digite os elementos da {i+1}a. linha: ')
-    for j in range(n):
-        matriz[i].append(float(input()))
+    for i in range(m):
+        print(f'Digite os elementos da {i+1}a. linha: ')
+        linha = []
+        for j in range(n):
+            linha.append(float(input()))
+        matriz.append(linha)
 
-vetor = []
+    vetor = []
+    for linha in matriz:
+        vetor.append(sum(linha))
 
-for i in range(m):
-    vetor.append(sum(matriz[i]))
 
-
-print('VETOR GERADO:')
-for resultado in vetor:
-    print(f'{resultado}')
+    print('VETOR GERADO:')
+    for resultado in vetor:
+        print(f'{resultado:.1f}')
+else:
+    print('Valores invalidos')

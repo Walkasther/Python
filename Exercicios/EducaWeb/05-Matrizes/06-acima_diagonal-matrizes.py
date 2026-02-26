@@ -3,17 +3,22 @@
 
 n = int(input('Qual a ordem da matriz? '))
 
-soma = 0
-matriz = []
+if 0 < n <= 10:
+    matriz = []
 
-for i in range(n):
-    linha = []
+    for i in range(n):
+        linha = []
+        for j in range(n):
+            linha.append(int(input(f'Elemento [{i},{j}]: ')))
+        matriz.append(linha)
 
-    for j in range(n):
-        linha.append(int(input(f'Elemento [{i},{j}]: ')))
-        if i < j:
-            soma += linha[j]
+    soma = 0
+    for i in range(n):
+        for j in range(n):
+            if i < j:
+                soma += matriz[i][j]
 
-    matriz.append(linha)
+    print(f'SOMA DOS ELEMENTOS ACIMA DA DIAGONAL PRINCIPAL = {soma}')
 
-print(f'SOMA DOS ELEMENTOS ACIMA DA DIAGONAL PRINCIPAL = {soma}')
+else:
+    print('Valores invalidos')
