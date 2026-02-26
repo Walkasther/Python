@@ -10,8 +10,10 @@ for i in range(n):
     for j in range(n):
         if matriz[i][j] < 0:
             quantidade_negativos += 1
-        if i == j:
-            print(f'{matriz[i][j]}', end='\n' if i+1 == n and j+1 == n else ' ')
+
+print('DIAGONAL PRINCIPAL:')
+for i in range(n):
+    print(f'{matriz[i][i]}', end=' ')
+print()
 
 print(f'QUANTIDADE DE NEGATIVOS = {quantidade_negativos}')
-
