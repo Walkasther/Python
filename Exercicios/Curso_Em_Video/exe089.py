@@ -28,13 +28,16 @@ print(f'N°{'Nome':^20}Média')
 print('-' * 30)
 
 for i, c in enumerate(sala):
-    print(f'{i}{sala[i][0]:^25}{sala[i][2]:.1f}')
+    print(f'{i}{c[0]:^25}{c[2]:.1f}')
 
 while True:
     print('-' * 30)
     mostrar_notas = int(input('Mostrar notas de qual aluno? (999 interrompe): '))
 
     if mostrar_notas == 999:
+        print('Finalizando...')
         break
-
-    print(f'As notas de {sala[mostrar_notas][0]} são {sala[mostrar_notas][1]}')
+    elif 0 <= mostrar_notas < len(sala):
+        print(f'As notas de {sala[mostrar_notas][0]} são {sala[mostrar_notas][1]}')
+    else:
+        print('Opção indisponível para mostrar')

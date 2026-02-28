@@ -17,8 +17,6 @@ while True:
     if continuar == 'N':
         break
 
-print(f'\033[32mForam cadastradas {len(pessoas)} pessoas.')
-
 for i,c in enumerate(pessoas):
     if i == 0:
         maior = c[1]
@@ -29,6 +27,7 @@ for i,c in enumerate(pessoas):
         elif c[1] <= menor:
             menor = c[1]
 
+print(f'\033[32mForam cadastradas {len(pessoas)} pessoas.')
 print(f'\033[31mo maior peso cadastrado foi de {maior}Kg. de ', end='')
 for c in pessoas:
     if c[1] == maior:

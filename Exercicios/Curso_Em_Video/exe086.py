@@ -8,7 +8,7 @@
 #         print(f'[ {matriz[i][j]} ]',end='' if j < 2 else '\n')
 
 #Solução 2
-matriz2 = [[0,0,0],[0,0,0],[0,0,0]]
+matriz2 = [[0, 0, 0], [0, 0, 0], [0, 0, 0]]
 for i in range(0,3):
     for j in range(0,3):
         matriz2[i][j] = int(input(f'Digite o valor de [{i},{j}]: '))

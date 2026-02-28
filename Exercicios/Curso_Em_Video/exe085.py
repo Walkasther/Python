@@ -12,6 +12,5 @@ for i in range(0,7):
         lista[1].append(valor2)
 
 print('-=' * 30)
-print(lista)
 print(f'\033[34mOs valores pares digitados foram: {sorted(lista[0])}')
 print(f'\033[36mOs valores impares digitados foram: {sorted(lista[1])}')
