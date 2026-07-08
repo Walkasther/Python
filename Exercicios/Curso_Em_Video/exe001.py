@@ -1,9 +1,8 @@
 #Crie um programa que escreva "Olá mundo" na tela.
 
-# Opção 1
-print('\033[31mOlá Mundo!\033[m')
+#Opção 1
+print('Olá Mundo!')
 
-# Opção 2
-msg = 'Olá mundo'
+#Opção 2
+msg = 'Olá Mundo!'
 print(msg)
-print('é isso ai')

@@ -5,7 +5,7 @@ import pygame
 print('\033[4;1mReproduzindo...')
 pygame.mixer.init()
 pygame.init()
-pygame.mixer.music.load('audio/ate_que_enfim_estamos_juntos.mp3')
+pygame.mixer.music.load('../audio/ate_que_enfim_estamos_juntos.mp3')
 pygame.mixer.music.play()
 pygame.event.wait()
 

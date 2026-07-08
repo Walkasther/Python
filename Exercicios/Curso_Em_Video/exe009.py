@@ -1,4 +1,5 @@
 #Faça um programa que leia um número inteiro qualquer e mostre na tela a sua tabuada
+
 from Curso_Em_Video.Aulas.cores import verde_claro
 
 n = int(input('{}Digite um número inteiro: '.format(verde_claro)))

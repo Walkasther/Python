@@ -7,7 +7,9 @@ tupla_numeros_aleatorios = randint(0,10),randint(0,10),randint(0,10),randint(0,1
 
 #Solução 1
 print(f'Os valores sorteados foram: ', end=' ')
-for n in tupla_numeros_aleatorios: print(n,end=' ')
+for n in tupla_numeros_aleatorios:
+    print(n,end=' ')
+
 print(f'\033[34m\nO Maior valor sorteado foi: {max(tupla_numeros_aleatorios)}')
 print(f'\033[33mO menor valor sorteado foi {min(tupla_numeros_aleatorios)}')
 
@@ -15,9 +17,11 @@ print(f'\033[33mO menor valor sorteado foi {min(tupla_numeros_aleatorios)}')
 #solução 2
 # maior = 0
 # menor = 0
+
 # print(f'Os valores sorteados foram: ', end=' ')
 # for n,c in enumerate(tupla_numeros_aleatorios):
 #     print(c,end =' ' if n+1 < len(tupla_numeros_aleatorios) else '\n' )
+
 #     if n == 0:
 #         maior = c
 #         menor = c
@@ -26,5 +30,6 @@ print(f'\033[33mO menor valor sorteado foi {min(tupla_numeros_aleatorios)}')
 #             maior = c
 #         elif menor > c:
 #             menor = c
+
 # print(f'\033[34mO Maior valor sorteado foi: {maior}')
 # print(f'\033[33mO menor valor sorteado foi {menor}')
