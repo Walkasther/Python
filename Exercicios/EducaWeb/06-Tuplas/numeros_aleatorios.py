@@ -1,8 +1,6 @@
 from random import sample
 
-
-anumeros = tuple(sample(range(1,11),5))
-
+anumeros = tuple(sample(range(11),5))
 
 print(f'Números gerados: {anumeros}')
 print(f'Menor valor: {min(anumeros)}')
