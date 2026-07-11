@@ -5,6 +5,7 @@
 n = []
 for i in range(0,5):
     valor = int(input(f'Digite o {i+1}° valor: '))
+
     if i == 0 or valor > n[-1]:
         n.append(valor)
         print('Adicionado ao final da lista...')
