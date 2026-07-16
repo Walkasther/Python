@@ -1,8 +1,9 @@
-a = [2,3,4,7,5,1]
-a.sort()
-b = a
+a = ([1,2,3],[3,2,1],[4,5,6])
+b = list(a)
 
-#b[2] =6
+b[1] = 7
 
-print(f'A: {a}')
-print(f'B: {b}')
+a[2].append(9)
+a[1].pop()
+print(a)
+print(b)
