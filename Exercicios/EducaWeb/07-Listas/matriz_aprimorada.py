@@ -19,7 +19,6 @@ for linha in matriz:
 for linha in matriz:
     soma_terceira_coluna += linha[2]
 
-
 print(f'\033[33mA soma dos valores pares digitados é: {soma_par}')
 print(f'\033[36mA soma dos valores da terceira coluna é: {soma_terceira_coluna}')
 print(f'\033[35mO maior valor da segunda linha é: {max(matriz[1])}')
