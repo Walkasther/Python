@@ -16,3 +16,5 @@ magenta_claro = '\033[95m'
 ciano_claro = '\033[96m'
 branco = '\033[97m'
 
+cores_escuras = [preto, vermelho, verde, amarelo, azul, magenta, ciano, cinza_escuro]
+cores_claras = [cinza_claro, vermelho_claro, verde_claro, amarelo_claro, azul_claro, magenta_claro, ciano_claro, branco]
