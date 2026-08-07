@@ -18,3 +18,11 @@ branco = '\033[97m'
 
 cores_escuras = [preto, vermelho, verde, amarelo, azul, magenta, ciano, cinza_escuro]
 cores_claras = [cinza_claro, vermelho_claro, verde_claro, amarelo_claro, azul_claro, magenta_claro, ciano_claro, branco]
+cores_claras2 = dict(cinza_claro = cinza_claro,
+                    vermelho_claro = vermelho_claro,
+                    verde_claro =verde_claro,
+                    amarelo_claro = amarelo_claro,
+                    azul_claro = azul_claro,
+                    magenta_claro = magenta_claro,
+                    ciano_claro = ciano_claro,
+                    branco = branco)

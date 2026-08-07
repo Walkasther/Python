@@ -4,3 +4,39 @@
 # B) A média de idade do grupo.
 # C) Uma lista com todas as mulheres.
 # D) Uma lista com todas as pessoas com idade acima da média.
+
+from Curso_Em_Video.Aulas.cores import cores_claras2
+
+pessoas = []
+
+while True:
+    pessoa = dict(
+        nome = input('Nome: '),
+        sexo =  input('Sexo: ').strip().upper()[0],
+        idade = int(input('Idade: '))
+    )
+
+    pessoas.append(pessoa)
+
+    continuar = input('\033[44;30mQuer continuar? [S]im | [N]ão:\033[m ')
+
+    if continuar.upper() == 'N':
+        break
+
+idade_media = sum(pessoa['idade'] for pessoa in pessoas) / len(pessoas)
+mulheres = [pessoa["nome"] for pessoa in pessoas if pessoa["sexo"] == 'F']
+acima_da_media = [pessoa for pessoa in pessoas if pessoa["idade"] > idade_media]
+
+print(f'{cores_claras2["amarelo_claro"]}- O grupo tem {len(pessoas)} pessoas.')
+print(f'{cores_claras2["azul_claro"]}- A média de idade do grupo é de: {idade_media:.2f} anos.')
+print(f'{cores_claras2["verde_claro"]}- Mulheres do grupo: {mulheres}')
+print(f'{cores_claras2["vermelho_claro"]}- Pessoas acima da média: {", ".join(pessoa["nome"] for pessoa in acima_da_media)}')
+
+# print('\033[mLista de pessoas que estão acima da média:')
+# for pessoa in pessoas:
+#     if pessoa['idade'] > idade_media:
+#         for k,v in pessoa.items():
+#             print(f'{k} = {v};', end=' ')
+#         print()
+
+print('<<ENCERRADO>>')

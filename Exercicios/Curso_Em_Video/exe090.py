@@ -13,6 +13,7 @@ print(f'Média do aluno: {aluno["media"]}')
 print(f'Situação do aluno: {aluno["situacao"]}')
 
 #---------------------------------------------------------------
+#Solução 2
 
 aluno2 = {'Nome':input('Insira o nome do Anulo: '),
          'Media':float(input('insira a media do aluno: '))}
