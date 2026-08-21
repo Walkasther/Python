@@ -18,11 +18,14 @@ while True:
         break
 
 print('-=' * 30)
-print(f'{"cod":<10}{"nome":<10}{"Gols":<20}{"Total":<10}')
+print(f'{"cod":<15}', end='')
+for k in jogador.keys():
+    print(f'{k:<15}', end='')
+print()
 print('-' * 60)
 
 for i, jogador in enumerate(jogadores):
-    print(f'{i:<10}{jogador["nome"]:<10}{", ".join(map(str, jogador["gols"])):<20}{jogador["total"]:<10}')
+    print(f'{i:<15}{jogador["nome"]:<15}{", ".join(map(str, jogador["gols"])):<15}{jogador["total"]:<15}')
 
 while True:
     print('-' * 60)
