@@ -6,6 +6,7 @@ def escreva(msg):
     print(msg)
     print(linha)
 
+
 escreva('Gustavo Guanabara')
 escreva('Curso de Python no Youtube')
 escreva('CeV')
