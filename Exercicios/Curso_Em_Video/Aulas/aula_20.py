@@ -1,18 +1,22 @@
-import cores
-
 def titulo(mensagem):
     print('-' * 30)
     print(f'{mensagem:^30}')
     print('-' * 30)
+
+
 def soma(*a):
     soma_numeros = sum(a)
     print(f'A soma de {a} é {soma_numeros}')
+
+
 def dobra(lst):
     pos = 0
     print(f'Os valores {lst} dobrados são:', end=' ')
     while pos < len(lst):
         lst[pos] *= 2
         pos += 1
+
+
 def contagem(b):
     print(b)
     b += 4
