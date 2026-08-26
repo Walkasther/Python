@@ -27,11 +27,11 @@ def leia_int(n=''):
                    a = int(a)
                else:
                    a = -int(a)
-               break
+
+               return a
 
         print('\033[31mERRO! Digite um número inteiro válido.\033[m')
 
-    return a
 
 
 def leia_float(n=''):

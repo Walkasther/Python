@@ -15,9 +15,8 @@ def fatorial(x, show=False):
         if show:
             print(i,end=' x ' if i > 1 else ' = ')
 
-
     return resultado
 
-print(fatorial(5, True))
 
+print(fatorial(5, True))
 help(fatorial)

@@ -14,13 +14,13 @@ def ficha(nome='<Desconhecido>', gols=0):
 jogador = input('Nome do jogador: ').strip()
 n_gols = input('número de gols: ').strip()
 
-if jogador and n_gols:
+if jogador and n_gols.isnumeric():
     ficha(jogador, int(n_gols))
 
 elif jogador:
     ficha(jogador)
 
-elif n_gols:
+elif n_gols.isnumeric():
     ficha(gols= int(n_gols))
 
 else:

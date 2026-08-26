@@ -18,7 +18,7 @@ def notas(*notas1, sit=False):
     menor = min(notas1),
     )
 
-    turma['media'] = sum(notas1) / turma['total']
+    turma['media'] = float(f"{sum(notas1) / turma['total']:.2f}")
 
     if sit:
         if turma['media'] >= 7:
@@ -34,5 +34,5 @@ def notas(*notas1, sit=False):
 
 
 #Programa principal
-resp = notas(3.5, 2, 6.5, sit=True)
+resp = notas(3.5, 2, 6.5, 8.6, sit=True)
 print(resp)
