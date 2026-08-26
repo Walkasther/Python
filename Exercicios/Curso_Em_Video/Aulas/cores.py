@@ -16,6 +16,24 @@ magenta_claro = '\033[95m'
 ciano_claro = '\033[96m'
 branco = '\033[97m'
 
+plano_de_fundo = dict(
+    branco = '\033[107m',
+    preto = '\033[40m',
+    vermelho = '\033[41m',
+    verde = '\033[42m',
+    amarelo = '\033[43m',
+    azul = '\033[44m',
+    magenta = '\033[45m',
+    ciano = '\033[46m',
+    cinza_claro = '\033[47m',
+    cinza_escuro = '\033[100m',
+    vermelho_claro = '\033[101m',
+    verde_claro = '\033[102m',
+    amarelo_claro = '\033[103m',
+    azul_claro = '\033[104m',
+    magenta_claro = '\033[105m',
+    ciano_claro = '\033[106m'
+)
 cores_escuras = [preto, vermelho, verde, amarelo, azul, magenta, ciano, cinza_escuro]
 cores_claras = [cinza_claro, vermelho_claro, verde_claro, amarelo_claro, azul_claro, magenta_claro, ciano_claro, branco]
 cores_claras2 = dict(cinza_claro = cinza_claro,
