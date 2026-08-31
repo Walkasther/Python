@@ -2,7 +2,7 @@
 #que já temos no módulo criado até aqui.
 
 from modulos.uteis import leia_float
-from modulos.exe110 import moeda
+import moeda
 
 preco = leia_float("Digite um preço: ", True)
 

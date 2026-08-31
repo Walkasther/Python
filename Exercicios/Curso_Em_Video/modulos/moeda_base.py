@@ -1,13 +1,14 @@
 def aumentar(numero, aumento):
-    return numero + (numero * aumento / 100)
-
+    valor = numero + (numero * aumento / 100)
+    return valor
 
 def diminuir(numero, reducao):
-    return numero - (numero * reducao / 100)
-
+    valor = numero - (numero * reducao / 100)
+    return valor
 def dobro(numero):
-    return numero * 2
-
+    valor = numero * 2
+    return valor
 
 def metade(numero):
-    return numero / 2
+    valor = numero / 2
+    return valor

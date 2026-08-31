@@ -2,9 +2,9 @@
 #Faça também um programa que importe esses modulos e use essas funções.
 
 from modulos import uteis
-from modulos.exe107 import moeda
+import moeda
 
-preco = uteis.leia_float('Digite um preço: ', positivo=True)
+preco = uteis.leia_float('Digite um preço: R$', positivo=True)
 
 print(f'A metade de {preco} é {moeda.metade(preco)}')
 print(f'O dobro de {preco} é {moeda.dobro(preco)}')

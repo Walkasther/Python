@@ -1,11 +1,11 @@
-from modulos.exe109 import moeda
+from exe109 import moeda
 from modulos.uteis import cabecalho
 
 def resumo(numero, aumento, reducao, formatado=True):
     cabecalho('RESUMO DO VALOR')
-    print(f'{"Preço analisado:":<20}{moeda.moeda(numero)}')
-    print(f'{"Dobro do preço:":<20}{moeda.dobro(numero, formatado)}')
-    print(f'{"Metade do preço:":<20}{moeda.metade(numero, formatado)}')
-    print(f'{f"{aumento}% de aumento:":<20}{moeda.aumentar(numero, aumento, formatado)}')
-    print(f'{f"{reducao}% de redução:":<20}{moeda.diminuir(numero, reducao, formatado)}')
+    print(f'Preço analisado: \t{moeda.moeda(numero)}')
+    print(f'Dobro do preço: \t{moeda.dobro(numero, formatado)}')
+    print(f'Metade do preço: \t{moeda.metade(numero, formatado)}')
+    print(f'{aumento}% de aumento: \t{moeda.aumentar(numero, aumento, formatado)}')
+    print(f'{reducao}% de redução: \t{moeda.diminuir(numero, reducao, formatado)}')
     cabecalho()

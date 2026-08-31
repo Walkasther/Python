@@ -122,7 +122,7 @@ def cabecalho(titulo='', linha='-', padrao=True, ):
 
     if titulo:
         print(linha)
-        print(f'{titulo:^{len(linha)}}')
+        print(f'{titulo.center(len(linha))}')
         print(linha)
     else:
         print(linha)

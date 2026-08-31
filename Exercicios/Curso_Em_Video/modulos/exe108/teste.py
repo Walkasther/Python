@@ -2,7 +2,7 @@
 #valor monetário formatado.
 
 from modulos import uteis
-from modulos.exe108 import moeda
+from exe108 import moeda
 
 
 preco = uteis.leia_float('Digite um preço: ', positivo=True)

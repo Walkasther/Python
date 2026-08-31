@@ -1,38 +1,22 @@
-from modulos.moeda_base import (metade as _metade,
-                                dobro as _dobro,
-                                diminuir as _diminuir,
-                                aumentar as _aumentar)
+from modulos.moeda_base import (metade as _metade, dobro as _dobro, diminuir as _diminuir, aumentar as _aumentar)
 from modulos.exe108.moeda import moeda
+
 
 def aumentar(numero, aumento, formatado=False):
     valor = _aumentar(numero, aumento)
-
-    if formatado:
-        valor = moeda(valor)
-
-    return valor
+    return valor if not formatado else moeda(valor)
 
 
 def diminuir(numero, reducao, formatado=False):
     valor = _diminuir(numero, reducao)
+    return moeda(valor) if formatado else valor
 
-    if formatado:
-        valor = moeda(valor)
-
-    return valor
 
 def dobro(numero, formatado=False):
     valor = _dobro(numero)
+    return moeda(valor) if formatado else valor
 
-    if formatado:
-        valor = moeda(valor)
-
-    return valor
 
 def metade(numero, formatado=False):
     valor = _metade(numero)
-
-    if formatado:
-        valor = moeda(valor)
-
-    return valor
+    return moeda(valor) if formatado else valor
