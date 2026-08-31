@@ -2,7 +2,7 @@
 #leia_dinheiro() que seja capaz de funcionar como a função input, más com uma validação de dados para aceitar apenas
 #valores que sejam monetários.
 
-from utilidadesCeV import moeda, dado
+from utilidadesCeV import moeda
 from utilidadesCeV.dado import leia_dinheiro
 
 preco = leia_dinheiro('Digite um Preço: R$',True)
