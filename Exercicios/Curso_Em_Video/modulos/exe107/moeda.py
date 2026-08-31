@@ -1,0 +1,1 @@
+from modulos.moeda_base import aumentar, diminuir, dobro, metade
