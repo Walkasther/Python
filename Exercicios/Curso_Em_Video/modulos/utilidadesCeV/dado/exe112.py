@@ -2,8 +2,7 @@
 #leia_dinheiro() que seja capaz de funcionar como a função input, más com uma validação de dados para aceitar apenas
 #valores que sejam monetários.
 
-from modulos.utilidadesCeV import moeda
-from modulos.utilidadesCeV.dado import leia_dinheiro
+from utilidadesCeV import moeda, dado
 
-preco = leia_dinheiro('Digite um Preço: R$',True)
+preco = dado.leia_dinheiro('Digite um Preço: R$', True)
 moeda.resumo(preco, 35, 22)

@@ -9,7 +9,7 @@ def leia_int(legenda='', positivo=False, negativo=False):
     """
     print('-' * 30)
     while True:
-        a = input(legenda)
+        a = input(legenda).strip()
         if a:
             numero_positivo = True
 
@@ -40,10 +40,10 @@ def leia_int(legenda='', positivo=False, negativo=False):
     return a
 
 
-def leia_float(legenda='', positivo=False, negativo=False):
+def leia_float(legenda='Digite um número Real: ', positivo=False, negativo=False):
     """
-    Recebe uma entrada contendo um número REAL, se a entrada não for um número REAL válido,
-    a função notifica o usuário e pede novamente para digitar um número REAL, até que seja válido.
+    Recebe uma entrada contendo um número REAL, se entrada entrada não for um número REAL válido,
+    entrada função notifica o usuário e pede novamente para digitar um número REAL, até que seja válido.
 
     Esta função aceita ',' no lugar do '.'
 
@@ -53,45 +53,55 @@ def leia_float(legenda='', positivo=False, negativo=False):
     :return: Número REAL válido digitado pelo usuário.
     """
     while True:
-        a = input(legenda)
-        if a:
+        entrada = input(legenda).strip()
+        if entrada:
             sinal_negativo = False
-            ponto = False
-            posicao_ponto = int
+            tem_ponto = False
+            posicao_ponto = None
 
-            if a[0] == '-':
-                sinal_negativo = True
-                a = a[1:]
+            if entrada[0] in '+-':
+                if len(entrada) == 1:
+                    print(f'\033[31mERRO! Entrada inválida!\nDigite um número real válido.\033[m')
+                    continue
 
-            if a[0] == '+':
-                a = a[1:]
+                if entrada[0] == '-':
+                    sinal_negativo = True
+
+                entrada = entrada[1:]
+
+                if entrada[0] in '+-':
+                    print(f'\033[31mERRO! Entrada inválida!\nDigite um número real válido.\033[m')
+                    continue
+
+            if '.' in entrada and ',' in entrada:
+                print('\033[31mERRO! Entrada inválida!\nDigite um número real válido.\033[m')
+                continue
+
+            if '.' in entrada and entrada.count('.') == 1:
+                tem_ponto = True
+                posicao_ponto = entrada.find('.')
+                entrada = entrada[0:posicao_ponto] + entrada[posicao_ponto+1:]
+
+            if ',' in entrada and entrada.count(',') == 1:
+                tem_ponto = True
+                posicao_ponto = entrada.find(',')
+                entrada = entrada[0:posicao_ponto] + entrada[posicao_ponto+1:]
 
 
-            if '.' in a and a.count('.') == 1:
-                ponto = True
-                posicao_ponto = a.find('.')
-                a = a[0:posicao_ponto] + a[posicao_ponto+1:]
-
-            if ',' in a and a.count(',') == 1:
-                ponto = True
-                posicao_ponto = a.find(',')
-                a = a[0:posicao_ponto] + a[posicao_ponto+1:]
-
-
-            if a.isnumeric():
-                if ponto:
-                    a = a[0:posicao_ponto] + '.' + a[posicao_ponto:]
+            if entrada.isnumeric():
+                if tem_ponto:
+                    entrada = entrada[0:posicao_ponto] + '.' + entrada[posicao_ponto:]
 
                 if sinal_negativo:
-                    a = -float(a)
+                    entrada = -float(entrada)
                 else:
-                    a = float(a)
+                    entrada = float(entrada)
 
                 if positivo and sinal_negativo:
                     print('\033[31mERRO! Digite apenas 0 ou um número real positivo válido.\033[m')
                     continue
 
-                elif negativo and not sinal_negativo and a != 0:
+                elif negativo and not sinal_negativo and entrada != 0:
                     print('\033[31mERRO! Digite apenas 0 ou um número real negativo válido.\033[m')
                     continue
 
@@ -99,7 +109,7 @@ def leia_float(legenda='', positivo=False, negativo=False):
 
         print('\033[31mERRO! Digite um número real válido.\033[m')
 
-    return a
+    return entrada
 
 
 def cabecalho(titulo='', linha='-', padrao=True, ):
