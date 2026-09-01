@@ -1,13 +1,14 @@
-def leia_int(legenda='Digite um número inteiro: ', positivo=False, negativo=False, minimo=0, maximo=0):
+#Reescreva a função leiaint() que fizemos no desafio 104, incluindo agora a digitação de um número de tipo inválido.
+#Aproveite e crie também uma função leiafloat() com a mesma funcionalidade
+
+def leiaint(legenda='Digite um número inteiro: ', positivo=False, negativo=False):
     """
         Recebe uma entrada contendo um número inteiro, se a entrada não for um número inteiro válido,
         a função notifica o usuário e pede novamente para digitar um número inteiro, até que seja válido.
-        :type maximo: (Opcional) determina qual é o valor máximo digitado peço usuário.
-        :param minimo: (Opcional) determina qual é o valor minimo digitado peço usuário.
-        :param positivo: (Opcional) se True, só aceita valores positivos ou 0.
-        :param negativo: (Opcional) se True, só aceita valores negativos ou 0.
-        :param legenda: (Opcional) Tipo: Str → Texto de auxílio ao usuário.
-        :return: Número inteiro válido digitado pelo usuário.
+        :param positivo: (Opcional) se True, só aceita valores positivos ou 0
+        :param negativo: (Opcional) se True, só aceita valores negativos ou 0
+        :param legenda: (Opcional) Tipo: Str → Texto de auxílio ao usuário
+        :return: Número inteiro válido digitado pelo usuário
         """
     while True:
         try:
@@ -31,20 +32,10 @@ def leia_int(legenda='Digite um número inteiro: ', positivo=False, negativo=Fal
                     print('\033[31mErro! Digite 0 ou um número inteiro negativo válido.\033[m')
                     continue
 
-            if minimo is not None and entrada < minimo:
-                print('\033[31mErro! Valor Digitado fora do intervalo numérico permitido.\033[m')
-                print(f'Erro! Valor abaixo do mínimo -> {minimo}.')
-                continue
-
-            if maximo is not None and entrada > maximo:
-                print('\033[31mErro! Valor Digitado fora do intervalo numérico permitido.\033[m')
-                print(f'Erro! Valor acima do máximo -> {maximo}')
-                continue
-
             return entrada
 
 
-def leia_float(legenda='Digite um número real: ', positivo=False, negativo=False):
+def leiafloat(legenda='Digite um número real: ', positivo=False, negativo=False):
     """
     Recebe uma entrada contendo um número REAL, se a entrada não for um número REAL válido,
     a função notifica o usuário e pede novamente para digitar um número REAL, até que seja válido.
@@ -82,30 +73,6 @@ def leia_float(legenda='Digite um número real: ', positivo=False, negativo=Fals
             return entrada
 
 
-def cabecalho(titulo='', linha='-', padrao=True, quantidade=None):
-    """
-    Escreve um cabeçalho personalizado na tela
-    :type quantidade: (opcional) define o tamanho da linha que fica acima e abaixo do título
-    :param titulo: Titulo do cabeçalho. Caso o usuário não coloque nada, será impresso apenas uma linha
-    :param linha: Linha acima e abaixo do título do cabeçalho.
-    :param padrao: Se True, exibe a linha com tamanho padrão de 30 caracteres, caso Else, exibe a linha com tamanho personalizado
-                   de acordo co o tamanho do título.
-    :return: None → sem retorno função não retorna nada
-    """
-    if quantidade:
-        linha *= quantidade
-    else:
-        if padrao:
-            linha *= 30
-        else:
-            if len(linha) == 1:
-                linha *= (len(titulo) + 4)
-            else:
-                linha *= int((len(titulo) + 4) / len(linha))
-
-    if titulo:
-        print(linha)
-        print(f'{titulo.center(len(linha))}')
-        print(linha)
-    else:
-        print(linha)
+n = leiaint(positivo=True)
+x = leiafloat(negativo=True)
+print(f'Você digitou o númeno inteiro {n} e o número real {x}')
