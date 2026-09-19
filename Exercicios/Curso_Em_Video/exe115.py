@@ -1,31 +1,22 @@
 #Crie um pequeno sistema modularizado que permita cadastrar pessoas pelo seu nome e idade em um arquivo de texto simples.
 #O sistema só vai ter 2 opções: cadastrar uma nova pessoa e listar todas as pessoas cadastradas.
 
+from modulo_exe115 import *
+from modulos.uteis import cabecalho, leia_int, menu
 
-from modulos.uteis import cabecalho, leia_int
+if not arquivo_existe('dados.txt'):
+    criar_arquivo('dados.txt')
 
 while True:
-    cabecalho('MENU PRINCIPAL', quantidade=50)
-    print(f'\033[33m1\033[m - \033[34mVer pessoas cadastradas\033[m')
-    print(f'\033[33m2\033[m - \033[34mCadastrar nova Pessoa\033[m')
-    print(f'\033[33m3\033[m - \033[34mSair do Sistema\033[m')
-    cabecalho(quantidade=50)
-    opcao = leia_int('\033[93mSua Opção: \033[m', minimo=1, maximo=3)
+
+    opcao = menu('Ver pessoas cadastradas', 'Cadastrar nova Pessoa', 'Sair do Sistema', titulo='MENU PRINCIPAL',qtd=50, linhaa='-')
 
     if opcao==1:
-        cabecalho('PESSOAS CADASTRADAS', quantidade=50)
-        arquivo = open('dados.txt', 'r')
-        conteudo = arquivo.read()
-        print(conteudo)
-        arquivo.close()
+        ler_arquivo('dados.txt')
 
     elif opcao==2:
-        cabecalho(quantidade=50)
-        nome = input('Nome: ')
-        idade = int(input('Idade: '))
-        arquivo = open('dados.txt', 'a')
-        arquivo.write(f'{nome:<40}{idade} Anos\n')
-        arquivo.close()
+        cabecalho('CADASTRAR PESSOA',quantidade=50)
+        editar_arquivo(input('Nome: '), leia_int('Idade: '))
 
     elif opcao == 3:
         cabecalho('Saindo do sistema... Até logo!', quantidade=50)

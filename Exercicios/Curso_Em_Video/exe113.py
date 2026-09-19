@@ -1,7 +1,7 @@
 #Reescreva a função leiaint() que fizemos no desafio 104, incluindo agora a digitação de um número de tipo inválido.
 #Aproveite e crie também uma função leiafloat() com a mesma funcionalidade
 
-def leiaint(legenda='Digite um número inteiro: ', positivo=False, negativo=False):
+def leia_int(legenda='Digite um número inteiro', positivo=False, negativo=False):
     """
         Recebe uma entrada contendo um número inteiro, se a entrada não for um número inteiro válido,
         a função notifica o usuário e pede novamente para digitar um número inteiro, até que seja válido.
@@ -10,6 +10,16 @@ def leiaint(legenda='Digite um número inteiro: ', positivo=False, negativo=Fals
         :param legenda: (Opcional) Tipo: Str → Texto de auxílio ao usuário
         :return: Número inteiro válido digitado pelo usuário
         """
+
+    if legenda == 'Digite um número inteiro' and positivo and not negativo:
+        legenda += ' positivo: '
+
+    elif legenda == 'Digite um número inteiro' and negativo and not positivo:
+        legenda += ' negativo: '
+
+    else:
+        legenda += ': '
+
     while True:
         try:
             entrada = int(input(legenda))
@@ -35,7 +45,7 @@ def leiaint(legenda='Digite um número inteiro: ', positivo=False, negativo=Fals
             return entrada
 
 
-def leiafloat(legenda='Digite um número real: ', positivo=False, negativo=False):
+def leia_float(legenda='Digite um número real', positivo=False, negativo=False):
     """
     Recebe uma entrada contendo um número REAL, se a entrada não for um número REAL válido,
     a função notifica o usuário e pede novamente para digitar um número REAL, até que seja válido.
@@ -47,6 +57,16 @@ def leiafloat(legenda='Digite um número real: ', positivo=False, negativo=False
     :param negativo: (Opcional) se True, só aceita valores negativos ou 0
     :return: Número REAL válido digitado pelo usuário.
     """
+
+    if legenda == 'Digite um número real' and positivo and not negativo:
+        legenda += ' positivo: '
+
+    elif legenda == 'Digite um número real' and negativo and not positivo:
+        legenda += ' negativo: '
+
+    else:
+        legenda += ': '
+
     while True:
         try:
             entrada_str = input(legenda).replace(',','.')
@@ -56,7 +76,7 @@ def leiafloat(legenda='Digite um número real: ', positivo=False, negativo=False
             print('\033[31m\nUsuário preferiu não digitar esse número.\033[m')
             return 0
 
-        except:
+        except ValueError:
             print('\033[31mErro! Digite um número real válido.\033[m')
 
         else:
@@ -73,6 +93,6 @@ def leiafloat(legenda='Digite um número real: ', positivo=False, negativo=False
             return entrada
 
 
-n = leiaint(positivo=True)
-x = leiafloat(negativo=True)
+n = leia_int()
+x = leia_float()
 print(f'Você digitou o númeno inteiro {n} e o número real {x}')
