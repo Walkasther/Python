@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module type="PYTHON_MODULE" version="4">
+  <component name="NewModuleRootManager">
+    <content url="file://$MODULE_DIR$">
+      <excludeFolder url="file://$MODULE_DIR$/Curso em Video Python/.venv" />
+      <excludeFolder url="file://$MODULE_DIR$/Exercicios/.venv" />
+      <excludeFolder url="file://$MODULE_DIR$/Faculdade/PhotoTime/.venv" />
+      <excludeFolder url="file://$MODULE_DIR$/Faculdade/Python Projects/pythonProject/.venv" />
+      <excludeFolder url="file://$MODULE_DIR$/Faculdade/eleicoes/.venv" />
+      <excludeFolder url="file://$MODULE_DIR$/Faculdade/phototimechatgpt/.venv" />
+      <excludeFolder url="file://$MODULE_DIR$/Faculdade/phototimewhatsappgpt/.venv" />
+      <excludeFolder url="file://$MODULE_DIR$/Faculdade/urna eletronica/.venv" />
+      <excludeFolder url="file://$MODULE_DIR$/Python/Exercicios/Estruturas Sequenciais/pythonProject1/.venv" />
+      <excludeFolder url="file://$MODULE_DIR$/Python/Exercicios/IF/pythonProject/.venv" />
+      <excludeFolder url="file://$MODULE_DIR$/Python/Exercicios/Vetores/Vetores/.venv" />
+      <excludeFolder url="file://$MODULE_DIR$/Python/Exercicios/while - for/pythonProject1/.venv" />
+      <excludeFolder url="file://$MODULE_DIR$/opcoesBinarias/.venv" />
+    </content>
+    <orderEntry type="inheritedJdk" />
+    <orderEntry type="sourceFolder" forTests="false" />
+  </component>
+  <component name="PackageRequirementsSettings" />
+  <component name="ReSTService" />
+</module>

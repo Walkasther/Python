@@ -1,4 +1,4 @@
-from modulos import print_formatado, leia_int
+from exercicios.modulos import print_formatado, leia_int
 from random import randint
 
 x = randint(0,50)
