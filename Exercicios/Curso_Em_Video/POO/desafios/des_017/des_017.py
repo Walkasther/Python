@@ -7,6 +7,9 @@ install()
 
 
 class Produto:
+    '''
+    cadastra e mostra nome e preço do produto
+    '''
     def __init__(self, nome, preco):
         self.nome = nome
         self.preco = preco
@@ -14,9 +17,12 @@ class Produto:
 
     def etiqueta(self):
         from rich.panel import Panel
+        conteudo = f'{self.nome:-^35} '\
+                    f'\n{"-"*36}'\
+                   f'\n{f'R${self.preco:,.2f}':.^36}'
 
-        painel = Panel(f'{self.nome:^35}\n{"-"*36}\n{f'R${self.preco:,.2f}':.^36}', title='Produto', width=40)
-        return painel
+        etiqueta = Panel(conteudo, title='Produto', width=40)
+        return etiqueta
 
 
 p1 = Produto('IPhone 17 Pro Max', 25_000.85)
